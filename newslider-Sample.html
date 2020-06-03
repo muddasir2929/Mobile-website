@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("head").append('<meta name="apple-mobile-web-app-capable" content="yes">');
+        });
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>new item of slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="mi-slider" class="mi-slider">
+        <ul>
+            <li><a href="#"><img src="./mobile-images/nokia125.png" alt="img01">
+                    <h4>Boots</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/nokia150.png" alt="img02">
+                    <h4>Oxfords</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/nokia53.png" alt="img03">
+                    <h4>Loafers</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/nokia_1-blue.png" alt="img04">
+                    <h4>Sneakers</h4>
+                </a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><img src="./mobile-images/nokia_2_1.png" alt="img05">
+                    <h4>Belts</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/nokia_2_2.png" alt="img06">
+                    <h4>Hats & Caps</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/nokia_3_1.png" alt="img07">
+                    <h4>Sunglasses</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/nokia_3_2.png" alt="img08">
+                    <h4>Scarves</h4>
+                </a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><img src="./mobile-images/samsung-galaxy-a20-32gb-blue.jpg" alt="img09">
+                    <h4>Casual</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/samsung-galaxy-a71-128gb-black-00.jpg" alt="img10">
+                    <h4>Luxury</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/samsung-galaxy-s10-black.jpg" alt="img11">
+                    <h4>Sport</h4>
+                </a></li>
+        </ul>
+        <ul>
+            <li><a href="#"><img src="./mobile-images/apple-iphone-11-128gb-yellow-esim-.jpg" alt="img12">
+                    <h4>Carry-Ons</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/apple-iphone-11-128gb-purple-esim-.jpg" alt="img13">
+                    <h4>Duffel Bags</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/apple-iphone-11-128gb-black-esim-.jpg" alt="img14">
+                    <h4>Laptop Bags</h4>
+                </a></li>
+            <li><a href="#"><img src="./mobile-images/nokia_1-blue.png" alt="img15">
+                    <h4>Briefcases</h4>
+                </a></li>
+        </ul>
+        <nav>
+            <a href="#">Shoes</a>
+            <a href="#">Accessories</a>
+            <a href="#">Watches</a>
+            <a href="#">Bags</a>
+        </nav>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _initEvents : function() {
+
+        var self = this;
+        this.$navcategories.on( 'click.catslider', function() {
+            self.showCategory( $( this ).index() );
+            return false;
+        } );
+    
+        // reset on window resize..
+        $( window ).on( 'resize', function() {
+            self.$categories.removeClass().eq( 0 ).addClass( 'mi-current' );
+            self.$navcategories.eq( self.current ).removeClass( 'mi-selected' ).end().eq( 0 ).addClass( 'mi-selected' );
+            self.current = 0;
+        } );
+    
+    }
+    
+    showCategory : function( catidx ) {
+    
+        if( catidx === this.current || this.isAnimating ) {
+            return false;
+        }
+        this.isAnimating = true;
+        // update selected navigation
+        this.$navcategories.eq( this.current ).removeClass( 'mi-selected' ).end().eq( catidx ).addClass( 'mi-selected' );
+    
+        var dir = catidx > this.current ? 'right' : 'left',
+            toClass = dir === 'right' ? 'mi-moveToLeft' : 'mi-moveToRight',
+            fromClass = dir === 'right' ? 'mi-moveFromRight' : 'mi-moveFromLeft',
+            // current category
+            $currcat = this.$categories.eq( this.current ),
+            // new category
+            $newcat = this.$categories.eq( catidx ),
+            $newcatchild = $newcat.children(),
+            lastEnter = dir === 'right' ? $newcatchild.length - 1 : 0,
+            self = this;
+    
+        if( this.support ) {
+    
+            $currcat.removeClass().addClass( toClass );
+            
+            setTimeout( function() {
+    
+                $newcat.removeClass().addClass( fromClass );
+                $newcatchild.eq( lastEnter ).on( self.animEndEventName, function() {
+    
+                    $( this ).off( self.animEndEventName );
+                    $newcat.addClass( 'mi-current' );
+                    self.current = catidx;
+                    var $this = $( this );
+                    // solve chrome bug
+                    self.forceRedraw( $this.get(0) );
+                    self.isAnimating = false;
+    
+                } );
+    
+            }, $newcatchild.length * 90 );
+    
+        }
+        else {
+    
+            $currcat.hide();
+            $newcat.show();
+            this.current = catidx;
+            this.isAnimating = false;
+    
+        }
+    
+    }
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

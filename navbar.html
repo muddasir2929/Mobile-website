@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>grid&flex navbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+            <a class="navbar-brand" href="#"><img src="logo2.png" alt="logo2" style="width:50px; height: 45px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse  justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">firstLink</a>
+                        <div class="dropdown-menu text-center">
+                            <a class="dropdown-item" href="#">first</a>
+                            <a class="dropdown-item" href="#">first</a>
+                            <a class="dropdown-item" href="#">first</a>
+                            <a class="dropdown-item" href="#">first</a>
+                            <a class="dropdown-item" href="#">first</a>
+                            <a class="dropdown-item" href="#">first</a>
+                            <a class="dropdown-item" href="#">first</a>
+                            <a class="dropdown-item" href="#">second</a>
+                            <a class="dropdown-item" href="#">third</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">secondLink</a>
+                        <div class="dropdown-menu text-center">
+                            <a class="dropdown-item" href="#">fourth</a>
+                            <a class="dropdown-item" href="#">fifth</a>
+                            <a class="dropdown-item" href="#">fifth</a>
+                            <a class="dropdown-item" href="#">fifth</a>
+                            <a class="dropdown-item" href="#">fifth</a>
+                            <a class="dropdown-item" href="#">fifth</a>
+                            <a class="dropdown-item" href="#">fifth</a>
+                            <a class="dropdown-item" href="#">six</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">thirdLink</a>
+                        <div class="dropdown-menu text-center">
+                            <a class="dropdown-item" href="#">mobile</a>
+                            <a class="dropdown-item" href="#">laptop</a>
+                            <a class="dropdown-item" href="#">laptop</a>
+                            <a class="dropdown-item" href="#">laptop</a>
+                            <a class="dropdown-item" href="#">laptop</a>
+                            <a class="dropdown-item" href="#">laptop</a>
+                            <a class="dropdown-item" href="#">laptop</a>
+                            <a class="dropdown-item" href="#">tablet</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">fourthLink</a>
+                        <div class="dropdown-menu text-center">
+                            <a class="dropdown-item" href="#">education</a>
+                            <a class="dropdown-item" href="#">donation</a>
+                            <a class="dropdown-item" href="#">welfare</a>
+                            <a class="dropdown-item" href="#">welfare</a>
+                            <a class="dropdown-item" href="#">welfare</a>
+                            <a class="dropdown-item" href="#">welfare</a>
+                            <a class="dropdown-item" href="#">welfare</a>
+                            <a class="dropdown-item" href="#">welfare</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center navbar-toggler"
+            data-toggle="collapse" data-target="#collapsibleNavbar">
+
+            <a class="navbar-brand" href="#"><img src="logo2.png" alt="logo2" style="width:50px; height: 45px;"></a>
+
+            <ul class="nav nav-pills">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">firstLink</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">first</a>
+                        <a class="dropdown-item" href="#">first</a>
+                        <a class="dropdown-item" href="#">first</a>
+                        <a class="dropdown-item" href="#">first</a>
+                        <a class="dropdown-item" href="#">first</a>
+                        <a class="dropdown-item" href="#">first</a>
+                        <a class="dropdown-item" href="#">first</a>
+                        <a class="dropdown-item" href="#">second</a>
+                        <a class="dropdown-item" href="#">third</a>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">secondLink</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">fourth</a>
+                        <a class="dropdown-item" href="#">fifth</a>
+                        <a class="dropdown-item" href="#">fifth</a>
+                        <a class="dropdown-item" href="#">fifth</a>
+                        <a class="dropdown-item" href="#">fifth</a>
+                        <a class="dropdown-item" href="#">fifth</a>
+                        <a class="dropdown-item" href="#">fifth</a>
+                        <a class="dropdown-item" href="#">six</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">thirdLink</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">mobile</a>
+                        <a class="dropdown-item" href="#">laptop</a>
+                        <a class="dropdown-item" href="#">laptop</a>
+                        <a class="dropdown-item" href="#">laptop</a>
+                        <a class="dropdown-item" href="#">laptop</a>
+                        <a class="dropdown-item" href="#">laptop</a>
+                        <a class="dropdown-item" href="#">laptop</a>
+                        <a class="dropdown-item" href="#">tablet</a>
+                    </div>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">fourthLink</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">education</a>
+                        <a class="dropdown-item" href="#">donation</a>
+                        <a class="dropdown-item" href="#">welfare</a>
+                        <a class="dropdown-item" href="#">welfare</a>
+                        <a class="dropdown-item" href="#">welfare</a>
+                        <a class="dropdown-item" href="#">welfare</a>
+                        <a class="dropdown-item" href="#">welfare</a>
+                        <a class="dropdown-item" href="#">welfare</a>
+                    </div>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">fifthLink</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">online academy</a>
+                        <a class="dropdown-item" href="#">online sadqah</a>
+                        <a class="dropdown-item" href="#">online sadqah</a>
+                        <a class="dropdown-item" href="#">online sadqah</a>
+                        <a class="dropdown-item" href="#">online sadqah</a>
+                        <a class="dropdown-item" href="#">online sadqah</a>
+                        <a class="dropdown-item" href="#">online sadqah</a>
+                        <a class="dropdown-item" href="#">online sadqah</a>
+                        <a class="dropdown-item" href="#">online istekhara</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+    </div> -->
+
+    
+
+
+
+    <!-- <div class="container">
+       
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+            </li>
+        </ul>
+
+    </div> -->
+
+
+
+
+
+
+
+
+    <!-- with buttons -->
+
+    <!-- <div class="dropdown" style="background-color: gainsboro;">
+        <div type="button" class=" dropdown-toggle" data-toggle="dropdown">
+            Home
+        </div>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+
+        <div type="button" class=" dropdown-toggle" data-toggle="dropdown">
+            Products
+        </div>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 4</a>
+            <a class="dropdown-item" href="#">Link 5</a>
+            <a class="dropdown-item" href="#">Link 6</a>
+        </div>
+
+        <div type="button" class=" dropdown-toggle" data-toggle="dropdown">
+            About Us
+        </div>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 7</a>
+            <a class="dropdown-item" href="#">Link 8</a>
+            <a class="dropdown-item" href="#">Link 9</a>
+        </div>
+    </div> -->
+
+
+
+
+    <!-- <div class="container bg-success">
+        <div class="row" style="background-color: darkkhaki;">
+            <div class="col-3 p-2 bg-dark text-center">
+                <img src="dress1.jpg" alt="image" style="width: 50px; height: 50px;">
+            </div>
+            <div class="col-9 bg-primary">
+                <div class="d-flex justify-content-center text-center mt-3">
+                    <div class="mx-1 bg-light flex-fill p-2">Home</div>
+                    <div class="mx-1 bg-light flex-fill p-2">Products</div>
+                    <div class="mx-1 bg-light flex-fill p-2">About Us</div>
+                    <div class="mx-1 bg-light flex-fill p-2">Contact Us</div>
+                    <div class="mx-1 bg-light flex-fill p-2">Privacy Policy</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br><br><br><br> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
